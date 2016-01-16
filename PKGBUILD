@@ -2,14 +2,14 @@
 # Maintainer: BlackEagle <ike DOT devolder AT gmail DOT com>
 
 pkgname=container-base
-pkgver=10
+pkgver=11
 pkgrel=1
 pkgdesc="busybox linked base for containers"
 arch=('any')
 url="http://herecura.eu/"
 license=('GPL')
 depends=('busybox')
-provides=('findutils' 'sed' 'grep' 'tar' 'lsof' 'wget' 'which' 'whois' 'traceroute' 'ed' 'dos2unix' 'cron' 'diffutils' 'texinfo')
+provides=('findutils' 'sed' 'grep' 'tar' 'lsof' 'wget' 'which' 'whois' 'traceroute' 'ed' 'dos2unix' 'cron' 'diffutils')
 #provides=('acpid' 'binutils' 'net-tools' 'iputils' 'gawk' 'bridge-utils' 'e2fsprogs' 'kbd' 'ncurses' 'diffutils' 'cron' 'kmod' 'inetutils' 'dos2unix' 'ed' 'grep' 'fbset' 'psmisc' 'hdparm' 'i2c-tools' 'net-tools' 'ifenslave' 'ifplugd' 'findutils' 'procps-ng' 'iproute2' 'ipcalc' 'less' 'lsof' 'pciutils' 'usbutils' 'man-db' 'dosfstools' 'sysstat' 'dnsutils' 'patch' 'powertop' 'rfkill' 'rpmextract' 'run-parts' 'sed' 'smem' 'syslog-ng' 'tar' 'traceroute' 'unzip' 'sharutils' 'wget' 'which' 'whois'
 #'runit' 'fatattr' 'fbsplash' 'microcom' 'sha3sum')
 
@@ -84,16 +84,4 @@ package() {
     # diffutils
     ln -s busybox "$pkgdir/usr/bin/cmp"
     ln -s busybox "$pkgdir/usr/bin/diff"
-
-    # texinfo hack
-    printf "#!/bin/sh\nexit 0" > "$pkgdir/usr/bin/info"
-    chmod +x "$pkgdir/usr/bin/info"
-    ln -s info "$pkgdir/usr/bin/install-info"
-    ln -s info "$pkgdir/usr/bin/makeinfo"
-    ln -s info "$pkgdir/usr/bin/pdftexi2dvi"
-    ln -s info "$pkgdir/usr/bin/pod2texi"
-    ln -s info "$pkgdir/usr/bin/texi2any"
-    ln -s info "$pkgdir/usr/bin/texi2dvi"
-    ln -s info "$pkgdir/usr/bin/texi2pdf"
-    ln -s info "$pkgdir/usr/bin/texindex"
 }
