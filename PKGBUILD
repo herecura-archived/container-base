@@ -2,14 +2,14 @@
 # Maintainer: BlackEagle <ike DOT devolder AT gmail DOT com>
 
 pkgname=container-base
-pkgver=8
+pkgver=9
 pkgrel=1
 pkgdesc="busybox linked base for containers"
 arch=('any')
 url="http://herecura.eu/"
 license=('GPL')
 depends=('busybox')
-provides=('findutils' 'sed' 'grep' 'tar' 'lsof' 'wget' 'which' 'whois' 'traceroute' 'ed' 'dos2unix' 'cron' 'diffutils' 'sh')
+provides=('findutils' 'sed' 'grep' 'tar' 'lsof' 'wget' 'which' 'whois' 'traceroute' 'ed' 'dos2unix' 'cron' 'diffutils')
 #provides=('acpid' 'binutils' 'net-tools' 'iputils' 'gawk' 'bridge-utils' 'e2fsprogs' 'kbd' 'ncurses' 'diffutils' 'cron' 'kmod' 'inetutils' 'dos2unix' 'ed' 'grep' 'fbset' 'psmisc' 'hdparm' 'i2c-tools' 'net-tools' 'ifenslave' 'ifplugd' 'findutils' 'procps-ng' 'iproute2' 'ipcalc' 'less' 'lsof' 'pciutils' 'usbutils' 'man-db' 'dosfstools' 'sysstat' 'dnsutils' 'patch' 'powertop' 'rfkill' 'rpmextract' 'run-parts' 'sed' 'smem' 'syslog-ng' 'tar' 'traceroute' 'unzip' 'sharutils' 'wget' 'which' 'whois'
 #'runit' 'fatattr' 'fbsplash' 'microcom' 'sha3sum')
 
@@ -17,7 +17,7 @@ package() {
     install -dm755 "$pkgdir/usr/bin"
 
     # sh and bash
-    ln -s busybox "$pkgdir/usr/bin/sh"
+    #ln -s busybox "$pkgdir/usr/bin/sh"
     #printf "#!/bin/sh\n/bin/sh \"\$@\"" > "$pkgdir/usr/bin/bash"
     #chmod +x "$pkgdir/usr/bin/bash"
 
